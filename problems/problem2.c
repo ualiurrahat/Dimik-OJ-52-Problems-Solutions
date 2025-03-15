@@ -1,4 +1,6 @@
-// problem 2: odd even 2
+// Solution to Problem 2 from "52 Programming Problems" by Tamim Shahriar Subeen
+// This problem is from Dimik OJ and is commonly solved using C.
+// Problem 2: Even Odd 2
 #include <stdio.h>
 #include <string.h>
 

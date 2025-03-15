@@ -1,4 +1,6 @@
-// problem 1: odd even 1
+// Solution to Problem 1 from "52 Programming Problems" by Tamim Shahriar Subeen
+// This problem is from Dimik OJ and is commonly solved using C.
+// Problem 1: Even Odd 1
 #include <stdio.h>
 
 int main()
