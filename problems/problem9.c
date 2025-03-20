@@ -1,4 +1,4 @@
-// Solution to Problem 7 from "52 Programming Problems" by Tamim Shahriar Subeen
+// Solution to Problem 9 from "52 Programming Problems" by Tamim Shahriar Subeen
 // This problem is from Dimik OJ and is commonly solved using C.
 // Problem 9: Whole Square Numbers
 #include <stdio.h>
