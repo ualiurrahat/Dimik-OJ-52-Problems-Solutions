@@ -1,5 +1,5 @@
 // Solution to Problem 45 from "52 Programming Problems" by Tamim Shahriar Subeen
-// Problem 44: Pascal's Triangle 2
+// Problem 45: Pascal's Triangle 2
 
 #include <stdio.h>
 
