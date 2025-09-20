@@ -1,30 +1,38 @@
-// Solution to Problem 7 from "52 Programming Problems" by Tamim Shahriar Subeen
+// Solution to Problem 10 from "52 Programming Problems" by Tamim Shahriar Subeen
 // This problem is from Dimik OJ and is commonly solved using C.
 // Problem 10: Run Rate 1
 #include <stdio.h>
 
 int main()
 {
-    int t;           // Declare variable for number of test cases
+    int t, i;
     scanf("%d", &t); // Read the number of test cases
 
-    while (t--) // Loop through all test cases
+    for (i = 0; i < t; i++)
     {
-        int totalRun, currentRun, ballsLeft;                   // Declare variables for total runs, current runs, and balls left
-        scanf("%d %d %d", &totalRun, &currentRun, &ballsLeft); // Read the values for total runs, current runs, and balls left
+        int totalRun, presentRun, ballLeft;
+        scanf("%d %d %d", &totalRun, &presentRun, &ballLeft);
 
-        // Calculate balls played and overs played
-        int ballsPlayed = 300 - ballsLeft;                     // Calculate balls played
-        double oversPlayed = (1.0 * ballsPlayed) / 6;          // Convert balls played to overs
-        double currRunRate = (1.0 * currentRun) / oversPlayed; // Calculate the current run rate
+        // Calculate current run rate:
+        // Total balls in ODI = 300. So balls played = 300 - ballLeft.
+        // Run rate formula: (runs / overs) => (runs / balls) * 6
+        double runRate = (presentRun / (double)(300 - ballLeft)) * 6.0;
 
-        // Calculate required run rate
-        int requiredRun = totalRun - currentRun + 1;              // Calculate required runs to win
-        double oversleft = (1.0 * ballsLeft) / 6;                 // Convert balls left to overs
-        double requiredRunRate = (1.0 * requiredRun) / oversleft; // Calculate the required run rate
+        // Runs required to win = opponent's score - current score + 1
+        double need = (totalRun - presentRun + 1) * 1.0;
 
-        // Print the current and required run rates
-        printf("%.2lf %.2lf\n", currRunRate, requiredRunRate);
+        // Required run rate = (required runs / balls left) * 6
+        double requiredRate = (need / (double)ballLeft) * 6.0;
+
+        // If already ahead of opponent's score, no required run rate
+        if (presentRun > totalRun)
+        {
+            requiredRate = 0.0;
+        }
+
+        // Print both run rates with precision up to two decimal points
+        printf("%.2lf %.2lf\n", runRate, requiredRate);
     }
-    return 0; // Return 0 to indicate successful execution
+
+    return 0;
 }
